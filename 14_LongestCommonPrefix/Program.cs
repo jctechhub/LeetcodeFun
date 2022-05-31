@@ -5,7 +5,7 @@ using System;
 // See https://aka.ms/new-console-template for more information
 Console.WriteLine("Hello, World!");
 
-var strs = new string[]{"flow", "flex", "flower"};
+var strs = new string[]{"above","fow", "flex", "flower"};
 
 var result = LongestCommonPrefix(strs);
 System.Console.WriteLine(result);
@@ -18,12 +18,12 @@ static string LongestCommonPrefix(string[] strs) {
 
     for(int i = 0; i<strs.Length; i++){
         while(strs[i].IndexOf(prefix) != 0){
-            prefix = prefix.SubString(0, prefix.Length() - 1);
+            prefix = prefix.Substring(0, length: prefix.Length - 1);
             System.Console.WriteLine($"prefix is: {prefix}");
-            
+            if (string.IsNullOrWhiteSpace(prefix)) return "";
         }
     }
 
 
-    return "b";
+    return prefix;
 }
